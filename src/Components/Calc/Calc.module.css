@@ -1,0 +1,61 @@
+.reverseIcon {
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem; 
+    background-color: #fff; 
+    box-shadow: 0 0 0.5rem #333; 
+    box-sizing: border-box;
+    margin: 1rem;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reverseIcon:hover {
+    box-shadow: 0 0 1rem #333;
+}
+
+.card {
+    width: calc(100%/3 - 1rem);
+    box-sizing: border-box;
+    margin: 1rem 0; 
+    padding: 1rem 1rem;
+}
+
+.cardInfoBlock {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.flexGrow1 {
+    flex-grow: 1;
+}
+.nativeSelect {
+    margin-right: 0.5em; 
+    font-size: 1.3rem;
+}
+
+.calcWrapper {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+}
+
+@media all and (max-width: 760px) {
+    .calcWrapper {
+        flex-direction: column;
+    }
+    .card {
+        width: auto;
+        margin: 1rem 1rem;
+    }
+
+    .reverseIcon {
+        transform: rotate(90deg);
+    }
+
+}

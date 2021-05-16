@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Header from './Components/Header/Header';
+import 'fontsource-roboto';
+import { ThemeProvider } from '@material-ui/styles';
+import { generalTheme } from './themes/generalTheme';
+import CoursesListContainer from './Components/CoursesList/CoursesListContainer';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import CourseCalcContainer from './Components/Calc/CalcContainer';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Provider store={store}>
+        <ThemeProvider theme={generalTheme}>
+          <BrowserRouter>
+            <Header />
+            <div className="mainContent">
+              <Switch>
+                <Route path="/courses" component={CoursesListContainer} />
+                <Route path="/calc" component={CourseCalcContainer} />
+                <Route path="/" component={CoursesListContainer} />
+              </Switch>
+            </div>
+          </BrowserRouter>
+        </ThemeProvider>
+      </Provider>
+
     </div>
   );
 }

@@ -1,0 +1,32 @@
+.MenuIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 1rem;
+    width: 1rem;
+}
+
+.MenuIcon > img {
+    height: 1rem;
+    width: 1rem;
+}
+
+.header {
+    background-color: #333;
+    color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.header a {
+    color: unset;
+    text-decoration: unset;
+}
+
+@media all and (max-width: 500px) {
+    .header h6 {
+        display: none
+    }
+}
+

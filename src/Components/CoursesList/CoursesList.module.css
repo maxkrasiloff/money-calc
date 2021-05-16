@@ -1,0 +1,97 @@
+.cardsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    /* align-items: flex-start; */
+    flex-wrap: wrap;
+}
+
+.card {
+    width: calc(100%/3 - 1rem);
+    box-sizing: border-box;
+    margin: 1rem 1.5rem; 
+    padding: 1rem 1rem;
+}
+
+.card:nth-child(3n) {
+    margin-right: 0;
+}
+
+.card:nth-child(1n) {
+    margin-left: 0;
+}
+
+.cardsContainer .charCode, .cardsContainer .caclcValute, .cardsContainer .mainValuteLabel  {
+    margin-right: 0.5em;
+    font-size: 1.3rem;
+}
+
+.cardsContainer .reverseArrow {
+    margin-right: 0.5em;
+    color: #777;
+    font-size: 1.3rem;
+}
+
+.cardsContainer .arrowCourseWrap {
+    font-size: 1.3rem;
+    margin-right: 0.5rem;
+}
+
+.cardsContainer .CourseDiff {
+    display: flex;
+    color: #777;
+}
+
+.cardsContainer .CourseDiff.toUp {
+    color: green;
+}
+
+.cardsContainer .CourseDiff.toDown {
+    color: red;
+}
+
+.cardsContainer .CourseDiffVal {
+    font-size: 1.3rem;
+}
+
+.blockContent {
+    display: flex;
+    justify-content: space-between
+}
+
+.courseInfo {
+    display: flex;
+}
+
+.searchFormWrapper {
+    width: 100%;
+    padding: 1rem; 
+    background-color: #fff; 
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+    box-sizing: border-box;
+}
+
+@media all and (max-width: 500px) {
+    .searchFormWrapper {
+        width: calc(100% -  1rem);
+        margin: 1rem 0.5rem;
+    }
+
+    .cardsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .card {
+            width: calc(100% - 1rem);
+            margin: 0.5rem 1rem;
+    }
+    .card:nth-child(1n) {
+        margin-right:unset
+    }
+    .card:nth-child(3n) {
+        margin-left: unset
+    }
+}
